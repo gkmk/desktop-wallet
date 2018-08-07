@@ -11,19 +11,19 @@
         return 0
       }
 
-      let ark = amount / ARKTOSHI_UNIT
+      let ark = amount / ARKTOSHI_UNIT / 100
 
       if (!keepPrecise) {
         ark = numberToFixed(ark)
       }
 
-      if (typeof numberOfDecimals !== 'number') {
-        return ark
-      }
+      // if (typeof numberOfDecimals !== 'number') {
+      //   return ark
+      // }
 
-      if (typeof ark === 'number') {
-        return ark.toFixed(numberOfDecimals)
-      }
+      // if (typeof ark === 'number') {
+        return ark.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+      // }
 
       // if we have a string, 'toFixed' won't work, so we use our custom implementation for that
       return numberStringToFixed(ark, numberOfDecimals)
@@ -34,7 +34,7 @@
         return 0
       }
 
-      const ark = amount * ARKTOSHI_UNIT
+      const ark = amount * ARKTOSHI_UNIT * 100
       return typeof numberOfDecimals !== 'number' ? ark : ark.toFixed(numberOfDecimals)
     }
 

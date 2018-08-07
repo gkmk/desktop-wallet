@@ -3,9 +3,9 @@
     <md-button ng-if="$ctrl.ul.selected" class="md-icon-button md-primary menu" hide-gt-md ng-click="$ctrl.ul.toggleList()" aria-label="Show Account List">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
-		<img src="ark.png" alt="" height="40">
-		<md-button ng-click="$ctrl.ul.selected?$ctrl.ul.selected=null:$ctrl.ul.selected=$ctrl.ul.accounts[0]"><strong>{{$ctrl.ul.network.token}} <translate>Client</translate> - {{$ctrl.ul.clientVersion}}</strong></md-button>
-		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion!=$ctrl.ul.latestClientVersion" open-external="'https://github.com/ArkEcosystem/ark-desktop/releases'" aria-label="New version available!">
+		<img src="logo.png" alt="" height="40">
+		<md-button ng-click="$ctrl.ul.selected?$ctrl.ul.selected=null:$ctrl.ul.selected=$ctrl.ul.accounts[0]"><strong>Cash IQ - v.{{$ctrl.ul.clientVersion}}</strong></md-button>
+		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion<$ctrl.ul.latestClientVersion" open-external="'https://github.com/ArkEcosystem/ark-desktop/releases'" aria-label="New version available!">
 			<translate>New version available!</translate>
 		</md-button>
 
@@ -37,7 +37,7 @@
 				<md-button aria-label="Show Settings" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">settings</md-icon>
 				</md-button>
-				<md-menu-content flex width="6" ng-style="$ctrl.ul.showExchangeRate() && {'min-height': '530px'} || {'min-height': '480px'}" style="overflow:hidden;">
+				<md-menu-content flex width="6" ng-style="$ctrl.ul.showExchangeRate() && {'min-height': '530px'} || {'min-height': '480px'}" style="overflow:auto;">
 					<md-list class="left-list">
 						<md-list-item ng-if="$ctrl.ul.showExchangeRate()">
 							<md-icon>attach_money</md-icon>
@@ -86,6 +86,10 @@
 						<md-list-item aria-label="Appearance" ng-click="$ctrl.ul.manageBackgrounds()">
 							<md-icon>landscape</md-icon>
 							<p translate>Appearance</p>
+						</md-list-item>
+						<md-list-item aria-label="Account Information" ng-click="$ctrl.ul.manageBackgrounds()">
+							<md-icon>account_circle</md-icon>
+							<p translate>Account Information</p>
 						</md-list-item>
 					</md-list>
 				</md-menu-content>

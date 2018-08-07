@@ -37,7 +37,7 @@
     })
     // Converts arktoshi into ark
     .filter('convertToArkValue', ['utilityService', utilityService => val => {
-      return utilityService.arktoshiToArk(val, true)
+      return utilityService.arktoshiToArk(val, true, 2)
     }])
     .filter('accountLabel', ['accountService', accountService => address => {
       if (!address) return address

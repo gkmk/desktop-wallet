@@ -47,7 +47,7 @@ if (shouldQuit) {
 
 function createWindow () {
   // Create the browser window.t
-  const iconpath = _path.resolve(__dirname, '/client/ark.png')
+  const iconpath = _path.resolve(__dirname, '/client/logo.png')
   let {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
 
   let mainWindowState = windowStateKeeper({
@@ -143,7 +143,7 @@ function createWindow () {
   const about = {
     role: 'about',
     click: () => openAboutWindow({
-      icon_path: `${__dirname}/client/ark.png`,
+      icon_path: `${__dirname}/client/logo.png`,
       package_json_dir: __dirname,
       copyright: 'Copyright (c) 2017 ARK',
       homepage: 'https://ark.io/',

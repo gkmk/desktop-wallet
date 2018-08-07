@@ -4,7 +4,7 @@
       <thead md-head md-order="query.order">
         <tr md-row>
           <th md-column md-numeric>
-            <translate>Id</translate>
+            <translate>Transaction ID</translate>
           </th>
           <th md-column md-numeric>
             <translate>Confirmations</translate>
@@ -16,7 +16,7 @@
             <translate>Total</Translate> {{$ctrl.ul.network.symbol}}</th>
           <th md-column md-numeric translate>From</th>
           <th md-column md-numeric translate>To</th>
-          <th md-column translate>Smartbridge</th>
+          <th md-column translate>Message</th>
         </tr>
       </thead>
       <tbody md-body style="white-space:nowrap;" infinite-scroll="$ctrl.transactionsCtrl.loadNext()" infinite-scroll-disabled='$ctrl.transactionsCtrl.isBusy' infinite-scroll-container='".tx-list-container"'>

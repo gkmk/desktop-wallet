@@ -20,18 +20,18 @@
   </md-list-item>
   <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectAccount(it)" ng-repeat="it in $ctrl.ul.myAccounts() track by $index">
     <span style="white-space: nowrap;">
-          <md-icon md-font-library="material-icons">{{ it.icon }}</md-icon>
+          <md-icon md-font-library="material-icons">account_circle</md-icon>
           {{it.address|accountLabel}}
         </span>
   </md-list-item>
   <md-list-item>
     <h2 translate>
-      Contacts
+      My Shops
     </h2>
   </md-list-item>
   <md-list-item md-colors="{background: (contact.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.gotoAddress(contact.address)" ng-repeat="contact in $ctrl.ab.contacts">
     <span style="white-space: nowrap;">
-      <md-icon md-font-library="material-icons">account_circle</md-icon>
+      <md-icon md-font-library="material-icons">account_balance</md-icon>
       {{contact.name}}
       <md-icon ng-if="$ctrl.ul.selected && contact.address !== $ctrl.ul.selected.address" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
         info_outline
@@ -46,7 +46,7 @@
   <md-list-item>
     <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
       <md-icon md-font-library="material-icons">add</md-icon>
-      <translate>Add Contact</translate>
+      <translate>Add Shop</translate>
     </md-button>
   </md-list-item>
 </md-list>

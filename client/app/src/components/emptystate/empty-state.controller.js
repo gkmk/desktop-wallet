@@ -16,7 +16,7 @@
 
   function EmptyStateController ($scope, gettextCatalog) {
     this.$onInit = () => {
-      this.imgSrc = this.imgSrc || 'assets/images/logo/white.png'
+      this.imgSrc = this.imgSrc || 'assets/images/logo/logo.png'
       this.header = this.header || gettextCatalog.getString('No data found')
     }
   }

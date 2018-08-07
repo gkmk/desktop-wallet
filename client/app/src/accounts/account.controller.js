@@ -754,7 +754,7 @@
         })
       let contacts = (storageService.get('contacts') || [])
         .map(c => {
-          return {name: c.name, address: c.address, type: gettext('Contact'), icon: 'account_circle'}
+          return {name: c.name, address: c.address, type: gettext('Contact'), icon: 'add_shopping_cart'}
         })
 
       contacts = contacts.concat(accounts).sort((a, b) => {
